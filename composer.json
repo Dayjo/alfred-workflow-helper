@@ -1,0 +1,13 @@
+{
+    "name": "dayjo/alfred-workflow-helper",
+    "description": "Helper for building alfred workflows in PHP",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Joel Day",
+            "email": "git@dayjo.me"
+        }
+    ],
+    "require": {}
+}
