@@ -11,6 +11,8 @@
     ],
     "require": {},
     "autoload": {
-       "psr-4": { "Alfred\\": "Alfred/" }
-   },
+       "psr-4": {
+           "Alfred\\": "Alfred/"
+       }
+   }
 }
