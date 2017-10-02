@@ -9,7 +9,7 @@ class Item
     {
         $this->title          = $item['title'];
         $this->arg            = (!empty($item['arg']) ? $item['arg'] : str_replace('"', '', $this->title));
-        $this->uid            = (!empty($item['uid']) ? $item['uid'] : md5($title));
+        $this->uid            = (!empty($item['uid']) ? $item['uid'] : md5($this->title));
         $this->autocomplete   = (!empty($item['autocomplete']) ? $item['autocomplete'] : '');
         $this->valid          = (!empty($item['valid']) ? $item['valid'] : true);
 
