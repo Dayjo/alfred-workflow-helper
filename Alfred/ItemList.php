@@ -9,6 +9,16 @@ class ItemList
         $this->items[] = $item;
     }
 
+    public function pop()
+    {
+        return array_pop($this->items);
+    }
+
+    public function shift()
+    {
+        return array_shift($this->items);
+    }
+
     public function output($mode = 'json')
     {
         if ($mode == 'xml') {
