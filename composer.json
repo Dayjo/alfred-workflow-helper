@@ -9,7 +9,15 @@
             "email": "git@dayjo.me"
         }
     ],
-    "require": {},
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/Dayjo/php-json-handler"
+        }
+    ],
+    "require": {
+        "dayjo/php-json-handler": "v1.0.*"
+    },
     "autoload": {
        "psr-4": {
            "Alfred\\": "Alfred/"
