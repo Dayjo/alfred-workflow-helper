@@ -99,9 +99,9 @@ class Workflow
         global $argv;
         $called = false;
         $this->args = $argv[1];
-
         // The command that has been sent
         $commandPrefix = explode(' ', $this->args)[0];
+
 
         // Loop through the commands
         foreach ($this->commands as $cmd) {
@@ -119,7 +119,19 @@ class Workflow
         }
 
         if (!$called) {
-            $this->runCommand($defaultCommand);
+
+            // Loop through the commands
+            foreach ($this->commands as $cmd) {
+                // Identify if this is the command being run
+                if (substr($cmd->prefix, 0, strlen($commandPrefix)) == $commandPrefix) {
+                    $called = $this->runCommand($cmd);
+                    break;
+                }
+            }
+
+            if (!$called) {
+                $this->runCommand($defaultCommand);
+            }
         }
     }
 
