@@ -8,6 +8,7 @@ class Item
     public function __construct(array $item)
     {
         $this->title          = $item['title'];
+        $this->subtitle       = (!empty($item['subtitle']) ? $item['subtitle'] : '');
         $this->arg            = (!empty($item['arg']) ? $item['arg'] : str_replace('"', '', $this->title));
         $this->uid            = (!empty($item['uid']) ? $item['uid'] : md5($this->title));
         $this->autocomplete   = (!empty($item['autocomplete']) ? $item['autocomplete'] : '');
@@ -27,6 +28,6 @@ class Item
 
     public function xml()
     {
-        return '<item uid="'.$this->uid.'" autocomplete= arg="' . $this->arg . '" ><title>'.$this->title.'</title></item>';
+        return '<item uid="'.$this->uid.'" autocomplete= arg="' . $this->arg . '" ><title>'.$this->title.'</title><subtitle>'.$this->subtitle.'</subtitle></item>';
     }
 }
