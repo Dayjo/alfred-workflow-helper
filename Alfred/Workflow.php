@@ -94,14 +94,15 @@ class Workflow
      * Actually run this workflow using the input from Alfred
      * @return [type] [description]
      */
-    public function run()
+    public function run($query = null)
     {
         global $argv;
         $called = false;
-        $this->args = $argv[1];
+
+        $this->args = $query ? $query : $argv[1];
+
         // The command that has been sent
         $commandPrefix = explode(' ', $this->args)[0];
-
 
         // Loop through the commands
         foreach ($this->commands as $cmd) {
