@@ -99,6 +99,7 @@ class Workflow
         global $argv;
         $called = false;
 
+        // Use the query if it's supplied
         $this->args = $query ? $query : $argv[1];
 
         // The command that has been sent
